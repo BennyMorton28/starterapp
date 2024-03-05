@@ -12,3 +12,9 @@
   padding: 20px;
   margin-top: 20px;
 }
+
+/* This CSS goes in app/assets/stylesheets/application.css */
+.blackjack-background {
+  background-color: #006400; /* Dark Green */
+}
+

@@ -1,4 +1,6 @@
 class BlackjackController < ApplicationController
+  before_action :require_user
+
   def index
     if params[:player_card_1]
       player_hand = [params[:player_card_1], params[:player_card_2]]

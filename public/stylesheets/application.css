@@ -1,0 +1,20 @@
+/* Add this to app/assets/stylesheets/application.css or a dedicated stylesheet */
+.card-image {
+  width: 100px; /* Adjust based on the actual size of your images */
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.advice-section {
+  background-color: #006400; /* DarkGreen */
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* This CSS goes in app/assets/stylesheets/application.css */
+.blackjack-background {
+  background-color: #006400; /* Dark Green */
+}
+
