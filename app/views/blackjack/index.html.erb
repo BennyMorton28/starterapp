@@ -1,0 +1,24 @@
+
+<%= form_with(url: blackjack_path, method: "get", local: true) do %>
+  <% ['player_card_1', 'player_card_2', 'dealer_card'].each do |card| %>
+    <%= label_tag "#{card}_value", "Select #{card.gsub('_', ' ').capitalize} Value:" %>
+    <%= select_tag "#{card}_value", options_for_select((2..10).to_a + ['J', 'Q', 'K', 'A']) %>
+
+    <%= label_tag "#{card}_suit", "Select #{card.gsub('_', ' ').capitalize} Suit:" %>
+    <%= select_tag "#{card}_suit", options_for_select(['clubs', 'diamonds', 'hearts', 'spades']) %>
+    <br/>
+  <% end %>
+  
+  <%= submit_tag "What should I do?" %>
+<% end %>
+
+<% if @advice %>
+  <div class="advice-section">
+    <p>Your hand:</p>
+    <%= image_tag "#{params[:player_card_1_suit]}_#{params[:player_card_1_value].downcase}.png", alt: "Player Card 1", class: "card-image" %>
+    <%= image_tag "#{params[:player_card_2_suit]}_#{params[:player_card_2_value].downcase}.png", alt: "Player Card 2", class: "card-image" %>
+    <p>Dealer's showing card:</p>
+    <%= image_tag "#{params[:dealer_card_suit]}_#{params[:dealer_card_value].downcase}.png", alt: "Dealer Card", class: "card-image" %>
+    <p>Advice: <%= @advice %></p>
+  </div>
+<% end %>
